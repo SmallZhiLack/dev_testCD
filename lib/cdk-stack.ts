@@ -58,8 +58,8 @@ export class CdkStack extends cdk.Stack {
     const main = new lambda.Function(this, "lambda", {
       runtime: lambda.Runtime.NODEJS_16_X,
       handler: "index.handler",
-      functionName: "a-test-function",
-      description: "這是一個a-test介紹",
+      functionName: "1-test-function",
+      description: "這是一個1-test介紹",
       memorySize: 256,
       timeout: cdk.Duration.seconds(5),
       layers: [dataAccessLayer],
@@ -70,8 +70,8 @@ export class CdkStack extends cdk.Stack {
     const main2 = new lambda.Function(this, "lambda2", {
       runtime: lambda.Runtime.NODEJS_16_X,
       handler: "index.handler",
-      functionName: "b-test-function",
-      description: "這是一個b-test介紹",
+      functionName: "2-test-function",
+      description: "這是一個2-test介紹",
       memorySize: 384,
       timeout: cdk.Duration.seconds(4),
       layers: [dataAccessLayer],
