@@ -34,7 +34,7 @@ jobs:
           npm ci
       - name: cdk synth
         id: synth
-        run: npm cdk synth
+        run: npx cdk synth
       - name: cdk deploy
         id: cdk
-        run: npm cdk deploy --require-approval never
+        run: npx cdk deploy --require-approval never
