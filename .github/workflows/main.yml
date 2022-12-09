@@ -19,13 +19,13 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
-      - name: npm install
-        working-directory: ./lambda
-        env:
-          CI: true
-        run: |
-          pwd
-          npm ci --only=prod
+      # - name: npm install
+      #   working-directory: ./lambda
+      #   env:
+      #     CI: true
+      #   run: |
+      #     pwd
+      #     npm ci --only=prod
       - name: npm install cdk modules
         env:
           CI: true
