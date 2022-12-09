@@ -3,6 +3,7 @@ import * as lambda from "aws-cdk-lib/aws-lambda";
 import { Construct } from "constructs";
 import * as iam from "aws-cdk-lib/aws-iam";
 import * as apigateway from "aws-cdk-lib/aws-apigateway";
+import * as path from "path";
 
 export class CdkStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -63,7 +64,7 @@ export class CdkStack extends cdk.Stack {
       timeout: cdk.Duration.seconds(5),
       layers: [dataAccessLayer],
       initialPolicy: [myCustomPolicy],
-      code: lambda.Code.fromAsset("lambda")
+      code: lambda.Code.fromAsset(path.resolve(__dirname, "../lambda"))
     });
 
     const main2 = new lambda.Function(this, "lambda2", {
@@ -75,7 +76,7 @@ export class CdkStack extends cdk.Stack {
       timeout: cdk.Duration.seconds(4),
       layers: [dataAccessLayer],
       initialPolicy: [myCustomPolicy],
-      code: lambda.Code.fromAsset("lambda2")
+      code: lambda.Code.fromAsset(path.resolve(__dirname, "../lambda2"))
     });
 
     // setting API 
